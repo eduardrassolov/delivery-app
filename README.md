@@ -1,10 +1,7 @@
-## Available Scripts
+Tech stack: ReactJs
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [https://delivery-app-test0.netlify.app/] to view it in your browser.
+## In the project directory, you can run:
+### `npm run start`- for start react app localy or:
+Open https://delivery-app-test0.netlify.app/ to view it in your browser.
 
 
