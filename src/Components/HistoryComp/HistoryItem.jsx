@@ -1,8 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function HistoryItem({
   item: { order_number, customers, productsArr, created, bill },
+  visible = false,
+  onClickClose,
 }) {
+  const handleClick = () => {
+    onClickClose();
+  };
   return (
     <>
       {/* TODO: refactor */}
@@ -13,17 +19,19 @@ export default function HistoryItem({
           <p>
             {/* TODO Refactor this calculation */}
             Shop -{" "}
-            {[...new Set(productsArr.map((prod) => prod.shop))].join(", ")}
+            {productsArr &&
+              [...new Set(productsArr.map((prod) => prod.shop))].join(", ")}
           </p>
           <p>Products:</p>
           <ol>
-            {productsArr.map((prod) => {
-              return (
-                <li key={prod._id}>
-                  {prod.name} - {prod.quantity}
-                </li>
-              );
-            })}
+            {productsArr &&
+              productsArr.map((prod) => {
+                return (
+                  <li key={prod._id}>
+                    {prod.name} - {prod.quantity}
+                  </li>
+                );
+              })}
           </ol>
           <p>
             <strong>Total bill: {bill}</strong>
@@ -31,12 +39,19 @@ export default function HistoryItem({
         </fieldset>
         <fieldset className="searched-container">
           <h3>Delivery information:</h3>
-          <p>To address - {customers.adress}</p>
-          <p>Name - {customers.name}</p>
-          <p>Email - {customers.email}</p>
-          <p>Number - {customers.phone}</p>
+          <p>To address - {customers?.adress}</p>
+          <p>Name - {customers?.name}</p>
+          <p>Email - {customers?.email}</p>
+          <p>Number - {customers?.phone}</p>
           <p>Confirmed at - {new Date(created).toLocaleString()}</p>
         </fieldset>
+        {visible && (
+          <Link to="/">
+            <button style={{ width: "100%" }} onClick={handleClick}>
+              Ok
+            </button>
+          </Link>
+        )}
       </div>
     </>
   );

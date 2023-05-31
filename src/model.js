@@ -2,8 +2,6 @@ import Axios from "axios";
 import { API_URL, QUERY_ADD_ORDER } from "./config.js";
 
 class DeliveryModel {
-  constructor() {}
-
   //TODO: refactor 2 functions below to one
   async fetchData(query, type = "get") {
     try {

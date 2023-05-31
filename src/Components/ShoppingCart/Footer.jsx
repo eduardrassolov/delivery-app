@@ -6,7 +6,7 @@ import Axios from "axios";
 //Footer on page of Cart, contain total price and button for submit order
 export default function Footer() {
   const { productsToOrder } = useContext(OrderContext);
-  const { contacts, submitOrder } = useContext(ContactsContext);
+  const { submitOrder } = useContext(ContactsContext);
 
   const [totalPrice, setTotalPrice] = useState(0);
   const handleSubmitOrder = () => {

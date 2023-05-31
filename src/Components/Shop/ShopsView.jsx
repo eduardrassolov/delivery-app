@@ -1,5 +1,5 @@
-import { React, useMemo, useState, useEffect, useContext } from "react";
-import { API_URL, QUERY_GET_SHOPS } from "../../config.js";
+import { React, useEffect, useContext } from "react";
+import { QUERY_GET_SHOPS } from "../../config.js";
 import "../../styles/styles.css";
 import Restaurant from "./Restaurant.jsx";
 import { OrderContext } from "../../App.js";

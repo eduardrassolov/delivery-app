@@ -1,6 +1,6 @@
 import { React, useState, useContext, useEffect } from "react";
 import Product from "./Product.jsx";
-import { API_URL, QUERY_GET_PRODUCTS } from "../../config.js";
+import { QUERY_GET_PRODUCTS } from "../../config.js";
 import { OrderContext } from "../../App.js";
 import { model } from "../../model.js";
 import Overlay from "../Overlay.jsx";

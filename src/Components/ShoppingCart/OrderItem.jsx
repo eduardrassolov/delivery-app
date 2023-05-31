@@ -1,12 +1,11 @@
 import { React, useContext, useEffect, useState } from "react";
 import { OrderContext } from "../../App.js";
-import { ContactsContext } from "../../Pages/ShoppingCart.jsx";
 
 export default function OrderItem({
   item: { _id, product, price, shop_id, img_url },
 }) {
   //items which in cart
-  const { productsToOrder, setProductsToOrder } = useContext(OrderContext);
+  const { setProductsToOrder } = useContext(OrderContext);
   const [quantityItem, setQuantity] = useState(1);
 
   const handleChangeQuantity = ({ target }) => {

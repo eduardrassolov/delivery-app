@@ -1,8 +1,9 @@
 import React from "react";
 import "../styles/styles.css";
 import { ColorRing } from "react-loader-spinner";
+import HistoryItem from "./HistoryComp/HistoryItem";
 
-export default function Overlay({ isHidden }) {
+export default function Overlay({ isHidden, item, onClickClose, visible }) {
   const overlayStlye = {
     zIndex: isHidden ? "-100" : "100",
     position: "absolute",
@@ -25,7 +26,7 @@ export default function Overlay({ isHidden }) {
     <>
       <div className="overlay-container" style={overlayStlye}>
         <ColorRing
-          visible={true}
+          visible={typeof item === "undefined" ? true : false}
           height="100"
           width="100"
           ariaLabel="blocks-loading"
@@ -33,6 +34,13 @@ export default function Overlay({ isHidden }) {
           wrapperClass="blocks-wrapper"
           colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
         />
+        {item && (
+          <HistoryItem
+            item={item}
+            onClickClose={onClickClose}
+            visible={visible}
+          />
+        )}
       </div>
     </>
   );

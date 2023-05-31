@@ -3,7 +3,7 @@ import Header from "../Components/Header";
 import HistoryList from "../Components/HistoryComp/HistoryList";
 import HistoryFilter from "../Components/HistoryComp/HistoryFilter";
 import Overlay from "../Components/Overlay";
-import { QUERY_SEARCH, API_URL } from "../config";
+import { QUERY_SEARCH } from "../config";
 
 import { model } from "../model.js";
 
@@ -44,6 +44,7 @@ export default function History() {
       <section id="history-container">
         <Header>History</Header>
         <HistoryFilter onSubmit={onSubmit}></HistoryFilter>
+
         <HistoryList searchedData={searchedData}></HistoryList>
       </section>{" "}
     </>
